@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_z4lv",
+  "full_name",
   "make"
  ],
  "fields": [
@@ -22,11 +23,16 @@
    "label": "Make",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-22 10:55:49.977166",
+ "modified": "2024-01-27 13:11:07.104327",
  "modified_by": "Administrator",
  "module": "New Hilltop",
  "name": "Vehicle Make",
