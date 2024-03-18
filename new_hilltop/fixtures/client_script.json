@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Sales Order",
+  "enabled": 0,
+  "modified": "2024-03-18 20:41:00.751626",
+  "module": null,
+  "name": "Test Sales order",
+  "script": "frappe.ui.form.on('Sales Order', {\n    refresh(frm) {\n        // Your code here\n    },\n\n    custom_pack_quantity: function(frm) {\n        // Calculate custom_box_no when custom_pack_quantity changes\n        calculateCustomBoxNo(frm);\n    },\n\n    qty: function(frm) {\n        // Calculate custom_box_no when qty changes\n        calculateCustomBoxNo(frm);\n    }\n});\n\nfunction calculateCustomBoxNo(frm) {\n    if (frm.doc.custom_pack_quantity && frm.doc.qty) {\n        // Perform division and store the result in custom_box_no\n        frm.set_value('custom_box_no', frm.doc.qty / frm.doc.custom_pack_quantity);\n    } else {\n        // Reset custom_box_no if either custom_pack_quantity or qty is not set\n        frm.set_value('custom_box_no', null);\n    }\n}\n",
+  "view": "Form"
+ }
+]
